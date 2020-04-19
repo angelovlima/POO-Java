@@ -1,17 +1,20 @@
 package l1;
 
 import java.util.Scanner;
-<<<<<<< HEAD
 
 
 public class Inicio {
 	
 	public static void main(String[] args) {
-		int menu;
+		//int menu;
 		Scanner sc = new Scanner(System.in);
 		
-		menu = sc.nextInt();
+		System.out.println("Entre com seu nome");
 		
+		Cliente a = new Cliente("Coringa", "3221-7235", "222.23233.42");
+		
+		System.out.println(a.getNome());
+		System.out.println(a.getTel());
 		 
 		
 		
