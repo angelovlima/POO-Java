@@ -1,4 +1,4 @@
-package L1;
+package l1;
 
 public class Agenda {
 
