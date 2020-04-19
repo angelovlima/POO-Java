@@ -18,7 +18,7 @@ public class Agenda extends Cliente{
 	
 
 
-	//teste
+	//teste2
 	
 	public static void adicionarNovoCliente(ArrayList<Cliente> listaClientes){
 		boolean cadastrando = true;
