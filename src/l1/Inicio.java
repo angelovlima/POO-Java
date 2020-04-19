@@ -1,6 +1,6 @@
 package l1;
 
-import java.util.ArrayList;
+import java.util.ArrayList;//teste2
 //import java.util.Scanner;
 
 

@@ -1,4 +1,4 @@
-package l1;
+package l1;//teste2
 
 public class Cliente {
 	protected String nome;
