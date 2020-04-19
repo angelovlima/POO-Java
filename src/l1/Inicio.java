@@ -1,20 +1,26 @@
 package l1;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+//import java.util.Scanner;
 
 
 public class Inicio {
 	
 	public static void main(String[] args) {
 		//int menu;
-		Scanner sc = new Scanner(System.in);
+		//Scanner sc = new Scanner(System.in);
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		Agenda.adicionarNovoCliente(clientes);
 		
-		System.out.println("Entre com seu nome");
+		for(Cliente elemento: clientes) {
+			System.out.println(elemento.nome);
+			System.out.println(elemento.tel);
+			System.out.println(elemento.genero);
+		}
 		
-		Cliente a = new Cliente("Coringa", "3221-7235", "222.23233.42");
 		
-		System.out.println(a.getNome());
-		System.out.println(a.getTel());
+		
+		
 		 
 		
 		
