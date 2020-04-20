@@ -1,16 +1,20 @@
 package l1;//teste2
 
+import java.util.ArrayList;
+
 public class Cliente {
 	protected String nome;
 	public String tel;
 	//private Nascimento nasci;
 	protected String genero;
+	public ArrayList<String> servicos = new ArrayList<String>();
 	
-	public Cliente(String nome, String tel, String genero) {
+	public Cliente(String nome, String tel, String genero, ArrayList<String> servicos) {
 		this.nome = nome;
 		this.tel = tel;
 		//this.nasci = nasci;
 		this.genero = genero;
+		this.servicos = servicos;
 	}
 
 	public String getNome() {
@@ -37,5 +41,14 @@ public class Cliente {
 		this.genero = genero;
 	}
 
+	public ArrayList<String> getServicos() {
+		return servicos;
+	}
+
+	public void setServicos(ArrayList<String> servicos) {
+		this.servicos = servicos;
+	}
+	
+	
 	
 }

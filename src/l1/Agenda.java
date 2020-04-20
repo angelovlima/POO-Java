@@ -7,9 +7,8 @@ public class Agenda extends Cliente{
 	
 	Scanner sc = new Scanner(System.in);
 	
-	public Agenda(String nome, String tel, String genero) {
-		super(nome, tel, genero);
-		// TODO Auto-generated constructor stub
+	public Agenda(String nome, String tel, String genero, ArrayList<String> servicos) {
+		super(nome, tel, genero, servicos);
 	}
 
 
@@ -31,7 +30,19 @@ public class Agenda extends Cliente{
 			System.out.println("Insira seu genero (m/f): ");
 			String generoCliente = sc.nextLine();
 			
-			Cliente cliente = new Cliente(nomeCliente, telCliente, generoCliente);
+			ArrayList<String> listaServicos = new ArrayList <String>();
+			System.out.println("Insira quantos serviços e produtos foram consumidos");
+			int quantidadeServico = sc.nextInt();
+			for(int i = 0; i<quantidadeServico; i++ ) {
+				System.out.println("Insira o serviço ou produto consumido: "); //(erro: o primeiro serviço/produto não está sendo "scaneado")
+				String servicoOuProduto = sc.nextLine();
+				System.out.println("esta sendo enviado a info");
+				listaServicos.add(servicoOuProduto);
+			}
+			
+			
+			
+			Cliente cliente = new Cliente(nomeCliente, telCliente, generoCliente, listaServicos);
 
 			listaClientes.add(cliente);
 
