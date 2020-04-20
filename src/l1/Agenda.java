@@ -130,22 +130,53 @@ public class Agenda extends Cliente{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Busque pelo nome: ");
 		String nome = sc.nextLine();
-		for (int i = 0; i < clientes.size(); i++) {
-		    if (clientes.get(i).getNome().equals(nome)) {
-		    	for(Cliente elemento: clientes) {
+		for(Cliente elemento: clientes) {
+		    if (elemento.nome.equals(nome)) {
 					System.out.println(elemento.servicos);
-		    	}
 		    }
 		}
 	}
 	public static void idadeMediaDosClientes(ArrayList<Cliente> clientes) {
-		int anos = 0, mediaAnos, i;
+        Calendar cal = GregorianCalendar.getInstance();
+        int diaAtual = cal.get(Calendar.DAY_OF_MONTH);
+        int mesAtual = cal.get(Calendar.MONTH) + 1;
+        int anoAtual = cal.get(Calendar.YEAR);
+        int idadeTotal = 0;
+
 		for(Cliente elemento: clientes) {
-			anos += elemento.nasci.ano;
-	    }
+		        int diaNasc = elemento.nasci.dia;
+		        if ((diaNasc<=0) && (diaNasc>31))
+		        {
+		            System.out.println("Dia Invalido");
+		        }else{
+		        	int mesNasc = elemento.nasci.mes;
+		        	if ((mesNasc<=0) && (mesNasc>12)){
+		            System.out.println("Mes invalido");
+		        	}else{
+		        		int anoNasc = elemento.nasci.ano;
+		        		if ((anoNasc<=0) && (anoNasc>anoAtual)){
+		        			System.out.println("Ano Invalido");
+		        		}else{
+		        			int nasc = anoNasc*365;
+		        			nasc = nasc+(mesNasc*31);
+		        			nasc = nasc+diaNasc;
+		        			int atual = anoAtual*365;
+		        			atual = atual+(mesAtual*31);
+		        			atual = atual+diaAtual;
+		        			idadeTotal += (atual-nasc)/365;
+		        			
+		           
+		        		}
+		        	}
+		        }
+		    }
+			idadeTotal = idadeTotal/clientes.size();
+			System.out.println("A idade media é de " + idadeTotal);
 		
-		mediaAnos = 2020-(anos/clientes.size());
-		System.out.println("A idade média dos clientes é de " + mediaAnos);
+        
+
+          
+            
 	}
 
 }
