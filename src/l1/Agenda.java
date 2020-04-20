@@ -31,7 +31,7 @@ public class Agenda extends Cliente{
 			String nomeCliente = sc.nextLine();
 			System.out.println("Insira seu telefone: ");
 			String telCliente = sc.nextLine();
-			System.out.println("Insira seu genero: ");
+			System.out.println("Insira seu genero (M/F): ");
 			String generoCliente = sc.nextLine();
 			
 			Cliente cliente = new Cliente(nomeCliente, telCliente, generoCliente);
