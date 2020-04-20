@@ -24,6 +24,7 @@ public class Inicio {
 					"4 - Remoção de Cadastro \n" +
 					"5 - Lista por Gênero \n" +
 					"6 - Serviços do Cliente\n" +
+					"7 - Idade Media dos Clientes\n" +
 					"0 - Sair \n");
 			opcaoMenu = sc.nextLine();	
 			
@@ -58,6 +59,9 @@ public class Inicio {
 			case "6":
 			Agenda.servicosCliente(clientes);
 			break;
+			
+			case "7":
+			Agenda.idadeMediaDosClientes(clientes);	
 			
 			case "0":
 				opcaoMenu = "0";

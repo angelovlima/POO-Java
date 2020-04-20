@@ -138,6 +138,15 @@ public class Agenda extends Cliente{
 		    }
 		}
 	}
+	public static void idadeMediaDosClientes(ArrayList<Cliente> clientes) {
+		int anos = 0, mediaAnos, i;
+		for(Cliente elemento: clientes) {
+			anos += elemento.nasci.ano;
+	    }
+		
+		mediaAnos = 2020-(anos/clientes.size());
+		System.out.println("A idade média dos clientes é de " + mediaAnos);
+	}
 
 }
 
