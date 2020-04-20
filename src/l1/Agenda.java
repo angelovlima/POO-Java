@@ -40,14 +40,13 @@ public class Agenda extends Cliente{
 			String generoCliente = sc.nextLine();
 			
 			ArrayList<String> listaServicos = new ArrayList <String>();
-			/*System.out.println("Insira quantos serviços e produtos foram consumidos");
-			int quantidadeServico = sc.nextInt();
+			System.out.println("Insira quantos serviços e produtos foram consumidos");
+			int quantidadeServico = scInt.nextInt();
 			for(int i = 0; i<quantidadeServico; i++ ) {
 				System.out.println("Insira o serviço ou produto consumido: "); //(erro: o primeiro serviço/produto não está sendo "scaneado")
 				String servicoOuProduto = sc.nextLine();
-				System.out.println("esta sendo enviado a info");
 				listaServicos.add(servicoOuProduto);
-			}*/
+			}
 			
 			
 			
@@ -127,7 +126,18 @@ public class Agenda extends Cliente{
 		
 	}
 	
-	
+	public static void servicosCliente(ArrayList<Cliente> clientes) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Busque pelo nome: ");
+		String nome = sc.nextLine();
+		for (int i = 0; i < clientes.size(); i++) {
+		    if (clientes.get(i).getNome().equals(nome)) {
+		    	for(Cliente elemento: clientes) {
+					System.out.println(elemento.servicos);
+		    	}
+		    }
+		}
+	}
 
 }
 

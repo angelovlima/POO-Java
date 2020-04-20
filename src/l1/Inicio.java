@@ -23,6 +23,7 @@ public class Inicio {
 					"3 - Editar Cadastro \n" +
 					"4 - Remoção de Cadastro \n" +
 					"5 - Lista por Gênero \n" +
+					"6 - Serviços do Cliente\n" +
 					"0 - Sair \n");
 			opcaoMenu = sc.nextLine();	
 			
@@ -54,6 +55,10 @@ public class Inicio {
 			
 			case "5":
 			ordenaPorGenero(clientes);
+			break;
+			
+			case "6":
+			Agenda.servicosCliente(clientes);
 			break;
 			
 			case "0":
