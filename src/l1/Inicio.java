@@ -6,9 +6,7 @@ public class Inicio {
 	
 	public static void main(String[] args) {
 		//int menu;
-		//Scanner sc = new Scanner(System.in);
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-		Agenda.adicionarNovoCliente(clientes);
 		
 		listarClientes(clientes);
 
@@ -16,35 +14,53 @@ public class Inicio {
 	
 	private static void listarClientes(ArrayList<Cliente> clientes) {
 		ordenaPorNome(clientes);
+		Scanner sc = new Scanner(System.in);
 		
-		//AquiEstariaUmSwitch
-		/*while(GetMenu() != 0) {
-		switch(x) {
-			case 1:
-				
+		String opcaoMenu = "";
+		while(opcaoMenu != "0") {
+			
+			System.out.println("\nMenu \n" +
+					"1 - Cadastrar clientes \n" +
+					"2 - Mostrar clientes cadastrados \n" +
+					"3 - Editar cadastro \n" +
+					"0 - Sair \n");
+			opcaoMenu = sc.nextLine();	
+			
+			switch(opcaoMenu) {
+			case "1": Agenda.adicionarNovoCliente(clientes);
+			break;
+			
+			case "2": 
+			for(Cliente elemento: clientes) {
+				System.out.println("----------------------------------");
+				System.out.println(elemento.nome);
+				System.out.println(elemento.tel);
+				System.out.println(elemento.genero);
 			}
-		}*/
+			break;
+			
+			case "3": 
+			Agenda.editarCadastro(clientes);
+			for(Cliente elemento: clientes) {
+				System.out.println("--------------------------------------");
+				System.out.println(elemento.nome);
+				System.out.println(elemento.tel);
+				System.out.println(elemento.genero);
+			}
+			break;
+			
+			case "0":
+				opcaoMenu = "0";
+				break;
+			
+			default:
+				System.out.println("Opção inválida!");
+				break;
+			}
+			
+			}
 		
-		//case 1 - mostrar lista
-		for(Cliente elemento: clientes) {
-			System.out.println("----------------------------------");
-			System.out.println(elemento.nome);
-			System.out.println(elemento.tel);
-			System.out.println(elemento.genero);
 		}
-		
-		//case 2 - editar cadastro
-		
-		Agenda.editarCadastro(clientes);
-		
-		for(Cliente elemento: clientes) {
-			System.out.println("--------------------------------------");
-			System.out.println(elemento.nome);
-			System.out.println(elemento.tel);
-			System.out.println(elemento.genero);
-		}
-		
-	}
 	
 	private static void ordenaPorNome(ArrayList<Cliente> clientes) {
 	    Collections.sort(clientes, new Comparator<Cliente>() {
