@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Cliente {
 	protected String nome;
 	public String tel;
-	//private Nascimento nasci;
+	public Nascimento nasci;
 	protected String genero;
 	public ArrayList<String> servicos = new ArrayList<String>();
 	
-	public Cliente(String nome, String tel, String genero, ArrayList<String> servicos) {
+	public Cliente(String nome, String tel, Nascimento nasci, String genero, ArrayList<String> servicos) {
 		this.nome = nome;
 		this.tel = tel;
-		//this.nasci = nasci;
+		this.nasci = nasci;
 		this.genero = genero;
 		this.servicos = servicos;
 	}
