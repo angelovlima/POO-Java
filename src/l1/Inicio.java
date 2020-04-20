@@ -4,7 +4,7 @@ import java.util.ArrayList;//teste2
 //import java.util.Scanner;
 import java.util.*;
 
-
+//teste3
 public class Inicio {
 	
 	public static void main(String[] args) {
