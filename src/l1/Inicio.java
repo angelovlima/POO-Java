@@ -37,9 +37,7 @@ public class Inicio {
 				System.out.println("----------------------------------");
 				System.out.println(elemento.nome);
 				System.out.println(elemento.tel);
-				System.out.println(elemento.nasci.dia);
-				System.out.println(elemento.nasci.mes);
-				System.out.println(elemento.nasci.ano);
+				System.out.println(elemento.nasci.dia + "/" + elemento.nasci.mes + "/" + elemento.nasci.ano);
 				System.out.println(elemento.genero);
 				
 			}
@@ -112,9 +110,7 @@ public class Inicio {
 			System.out.println("--------------------------------------");
 			System.out.println(elemento.nome);
 			System.out.println(elemento.tel);
-			System.out.println(elemento.nasci.dia);
-			System.out.println(elemento.nasci.mes);
-			System.out.println(elemento.nasci.ano);
+			System.out.println(elemento.nasci.dia + "/" + elemento.nasci.mes + "/" + elemento.nasci.ano);
 			System.out.println(elemento.genero);
 			
 		}
