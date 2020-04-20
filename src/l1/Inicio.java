@@ -19,10 +19,11 @@ public class Inicio {
 		String opcaoMenu = "";
 		while(opcaoMenu != "0") {
 			
-			System.out.println("\nMenu \n" +
-					"1 - Cadastrar clientes \n" +
-					"2 - Mostrar clientes cadastrados \n" +
-					"3 - Editar cadastro \n" +
+			System.out.println("\nMENU \n" +
+					"1 - Cadastrar Clientes \n" +
+					"2 - Mostrar Clientes Cadastrados \n" +
+					"3 - Editar Cadastro \n" +
+					"4 - Remoção de Cadastro \n" +
 					"0 - Sair \n");
 			opcaoMenu = sc.nextLine();	
 			
@@ -41,6 +42,16 @@ public class Inicio {
 			
 			case "3": 
 			Agenda.editarCadastro(clientes);
+			for(Cliente elemento: clientes) {
+				System.out.println("--------------------------------------");
+				System.out.println(elemento.nome);
+				System.out.println(elemento.tel);
+				System.out.println(elemento.genero);
+			}
+			break;
+			
+			case "4":
+			Agenda.removerCadastro(clientes);
 			for(Cliente elemento: clientes) {
 				System.out.println("--------------------------------------");
 				System.out.println(elemento.nome);

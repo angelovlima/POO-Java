@@ -80,6 +80,32 @@ public class Agenda extends Cliente{
 			}
 		}
 	}
+	
+	public static void removerCadastro(ArrayList<Cliente> listaClientes){
+		boolean removendo = true;
+		
+		while (removendo) {
+			System.out.println("REMOVER CADASTRO");
+			System.out.println("Digite o nome para REMOVER:");
+			Scanner sc = new Scanner(System.in);
+			String nome = sc.nextLine();
+			for (int i = 0; i < listaClientes.size(); i++) {
+			    if (listaClientes.get(i).getNome().equals(nome)) {
+			      listaClientes.remove(i);
+			    }
+			  }
+			System.out.println("Continuar removendo (S/N) ?");
+			String continua = sc.nextLine();
+			if (continua.equalsIgnoreCase("N")) {
+				removendo = false;
+			} else if (continua.equalsIgnoreCase("S")){
+			} else {
+				System.out.println("\nOpção inválida! Você será redirecionado ao Menu.\n");
+				removendo = false;
+			}
+		}
+		
+	}
 
 }
 
