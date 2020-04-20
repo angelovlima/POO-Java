@@ -13,18 +13,26 @@ public class Inicio {
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		Agenda.adicionarNovoCliente(clientes);
 		
+		listarClientes(clientes);
+
+	}
+	
+	private static void listarClientes(ArrayList<Cliente> clientes) {
 		ordenaPorNome(clientes);
 		
+		//AquiEstariaUmSwitch
+		
+		
+		
+		
+		
+		//case 1
 		for(Cliente elemento: clientes) {
 			System.out.println("----------------------------------");
 			System.out.println(elemento.nome);
 			System.out.println(elemento.tel);
 			System.out.println(elemento.genero);
 		}
-		
-		
-
-
 	}
 	
 	private static void ordenaPorNome(ArrayList<Cliente> clientes) {
@@ -35,6 +43,7 @@ public class Inicio {
 	        }
 	    });
 	}
+	
 	
 
 
