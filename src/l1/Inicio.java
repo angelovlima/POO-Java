@@ -1,10 +1,7 @@
 package l1;
 
-import java.util.ArrayList;//teste2
-//import java.util.Scanner;
 import java.util.*;
 
-//teste3
 public class Inicio {
 	
 	public static void main(String[] args) {
@@ -21,18 +18,32 @@ public class Inicio {
 		ordenaPorNome(clientes);
 		
 		//AquiEstariaUmSwitch
+		/*while(GetMenu() != 0) {
+		switch(x) {
+			case 1:
+				
+			}
+		}*/
 		
-		
-		
-		
-		
-		//case 1
+		//case 1 - mostrar lista
 		for(Cliente elemento: clientes) {
 			System.out.println("----------------------------------");
 			System.out.println(elemento.nome);
 			System.out.println(elemento.tel);
 			System.out.println(elemento.genero);
 		}
+		
+		//case 2 - editar cadastro
+		
+		Agenda.editarCadastro(clientes);
+		
+		for(Cliente elemento: clientes) {
+			System.out.println("--------------------------------------");
+			System.out.println(elemento.nome);
+			System.out.println(elemento.tel);
+			System.out.println(elemento.genero);
+		}
+		
 	}
 	
 	private static void ordenaPorNome(ArrayList<Cliente> clientes) {
