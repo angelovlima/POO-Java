@@ -6,12 +6,14 @@ public class Usuario {
 	public Endereco endereco;
 	public String email;
 	public Login login;
-	public Usuario(String nome, String tel, Endereco endereco, String email, Login login) {
+	public boolean juridica;
+	public Usuario(String nome, String tel, Endereco endereco, String email, Login login, boolean juridica) {
 		this.nome = nome;
 		this.tel = tel;
 		this.endereco = endereco;
 		this.email = email;
 		this.login = login;
+		this.juridica = juridica;
 	}
 	public String getNome() {
 		return nome;
