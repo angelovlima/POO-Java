@@ -43,7 +43,7 @@ public class Agenda extends Cliente{
 			System.out.println("Insira quantos serviços e produtos foram consumidos");
 			int quantidadeServico = scInt.nextInt();
 			for(int i = 0; i<quantidadeServico; i++ ) {
-				System.out.println("Insira o serviço ou produto consumido: "); //(erro: o primeiro serviço/produto não está sendo "scaneado")
+				System.out.println("Insira o serviço ou produto consumido: ");
 				String servicoOuProduto = sc.nextLine();
 				listaServicos.add(servicoOuProduto);
 			}
@@ -178,6 +178,43 @@ public class Agenda extends Cliente{
           
             
 	}
+	
+	public static void verificarServicoMaisProcurado(ArrayList<Cliente> clientes) {
+		ArrayList<String> todosOsServicos = new ArrayList<String>();
+		String servicoMaisConsumido="", servicoAnterior="";
+		int vezesConsumidas=0, cont=1;
+		for(Cliente elemento: clientes) {
+			for(String servico: elemento.servicos) {
+				todosOsServicos.add(servico);
+		    }
+		}
+		Collections.sort(todosOsServicos);
+		for(String servico: todosOsServicos) {
+			System.out.println("servico " + servico);
+			System.out.println("servico anterior " + servicoAnterior);
+			if(servico.equals(servicoAnterior)) {
+				cont++;
+				System.out.println("Contador " + cont);
+				System.out.println("Vezes Consumidas " + vezesConsumidas);
+				if(vezesConsumidas<cont) {
+					vezesConsumidas = cont;
+					servicoMaisConsumido = servico;
+					System.out.println(vezesConsumidas);
+					System.out.println(servicoMaisConsumido);
+				}
+			}
+			else {
+				servicoAnterior = servico;
+				cont=1;
+				System.out.println("Contador zerado " + cont);
+			}
+		}
+		System.out.println(todosOsServicos);
+		System.out.println("O servico " + servicoMaisConsumido + " foi utilizado " + vezesConsumidas+ " vezes, sendo assim o mais consumido");
+		
+		
+	}
+	
 
 }
 

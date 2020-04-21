@@ -25,6 +25,8 @@ public class Inicio {
 					"5 - Lista por Gênero \n" +
 					"6 - Serviços do Cliente\n" +
 					"7 - Idade Media dos Clientes\n" +
+					"8 - Idade Media dos Clientes por sexo\n" +
+					"9 - Verificar serviço mais procurado\n" +
 					"0 - Sair \n");
 			opcaoMenu = sc.nextLine();	
 			
@@ -62,6 +64,9 @@ public class Inicio {
 			
 			case "7":
 			Agenda.idadeMediaDosClientes(clientes);	
+			
+			case "9":
+			Agenda.verificarServicoMaisProcurado(clientes);
 			
 			case "0":
 				opcaoMenu = "0";
