@@ -32,6 +32,23 @@ public class Cliente {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+	
+
+	public Nascimento getNasci(int dia) {
+		return nasci = this.nasci;
+	}
+
+	public void setNasciDia(int dia) {
+		this.nasci.dia = dia;
+	}
+	
+	public void setNasciMes(int mes) {
+		this.nasci.mes = mes;
+	}
+	
+	public void setNasciAno(int ano) {
+		this.nasci.ano = ano;
+	}
 
 	public String getGenero() {
 		return genero;

@@ -12,9 +12,13 @@ public class Inicio {
 	}
 	
 	private static void listarClientes(ArrayList<Cliente> clientes) {
+		ArrayList<Cliente> clientesMasculinos = new ArrayList<Cliente>();
+		ArrayList<Cliente> clientesFemininos = new ArrayList<Cliente>();
+		ArrayList<Cliente> clientesOutrosGeneros = new ArrayList<Cliente>();
+		
 		Scanner sc = new Scanner(System.in);
 		
-		String opcaoMenu = "";
+		String opcaoMenu = "", menuDois = "";
 		while(opcaoMenu != "0") {
 			
 			System.out.println("\nMENU \n" +
@@ -37,14 +41,7 @@ public class Inicio {
 			break;
 			
 			case "2": 
-			for(Cliente elemento: clientes) {
-				System.out.println("----------------------------------");
-				System.out.println(elemento.nome);
-				System.out.println(elemento.tel);
-				System.out.println(elemento.nasci.dia + "/" + elemento.nasci.mes + "/" + elemento.nasci.ano);
-				System.out.println(elemento.genero);
-				
-			}
+			Agenda.printarClientes(clientes);
 			break;
 			
 			case "3": 
@@ -56,7 +53,32 @@ public class Inicio {
 			break;
 			
 			case "5":
-			ordenaPorGenero(clientes);
+			ordenaPorGenero(clientes,clientesMasculinos, clientesFemininos, clientesOutrosGeneros);
+			System.out.println("\nEscolha um Gênero\n"+
+					"1 - Masculino \n" +
+					"2 - Feminino \n" +
+					"3 - Outros \n");
+			menuDois = sc.nextLine();
+			switch(menuDois) {
+			case "1":
+				System.out.println("\nMasculino ##########################################\n");
+				Agenda.printarClientes(clientesMasculinos);
+				break;
+			
+			case "2":
+				System.out.println("\nFeminino ##########################################\n");
+				Agenda.printarClientes(clientesFemininos);
+				break;
+			
+			case "3":
+				System.out.println("\nOutrosGêneros ##########################################\n");
+				Agenda.printarClientes(clientesOutrosGeneros);
+				break;
+			default:
+				System.out.println("Opção inválida!");
+				break;
+			}
+			
 			break;
 			
 			case "6":
@@ -64,11 +86,56 @@ public class Inicio {
 			break;
 			
 			case "7":
-			Agenda.idadeMediaDosClientes(clientes);	
+			Agenda.idadeMediaDosClientes(clientes);
+			break;
+			
+			case "8":
+				ordenaPorGenero(clientes,clientesMasculinos, clientesFemininos, clientesOutrosGeneros);
+				System.out.println("\nEscolha um Gênero\n"+
+						"1 - Masculino \n" +
+						"2 - Feminino \n" +
+						"3 - Outros \n");
+				menuDois = sc.nextLine();
+				switch(menuDois) {
+				case "1": 
+					Agenda.idadeMediaDosClientes(clientesMasculinos);
+					break;
+				case "2": 
+					Agenda.idadeMediaDosClientes(clientesFemininos);
+					break;
+				case "3":
+					Agenda.idadeMediaDosClientes(clientesOutrosGeneros);
+					break;
+				default:
+					System.out.println("Opção inválida!");
+					break;
+				}
 			
 			case "9":
 			Agenda.verificarServicoMaisProcurado(clientes);
+			break;
 			
+			case "10":
+				ordenaPorGenero(clientes,clientesMasculinos, clientesFemininos, clientesOutrosGeneros);
+				System.out.println("\nEscolha um Gênero\n"+
+						"1 - Masculino \n" +
+						"2 - Feminino \n" +
+						"3 - Outros \n");
+				menuDois = sc.nextLine();
+				switch(menuDois) {
+				case "1": 
+					Agenda.verificarServicoMaisProcurado(clientesMasculinos);
+					break;
+				case "2": 
+					Agenda.verificarServicoMaisProcurado(clientesFemininos);
+					break;
+				case "3":
+					Agenda.verificarServicoMaisProcurado(clientesOutrosGeneros);
+					break;
+				default:
+					System.out.println("Opção inválida!");
+					break;
+				}
 			case "0":
 				opcaoMenu = "0";
 				break;
@@ -91,11 +158,11 @@ public class Inicio {
 	    });
 	}
 	
-	private static void ordenaPorGenero(ArrayList<Cliente> clientes) {
+	private static void ordenaPorGenero(ArrayList<Cliente> clientes,ArrayList<Cliente> clientesMasculinos,ArrayList<Cliente> clientesFemininos,ArrayList<Cliente> clientesOutrosGeneros) {
 		ordenaPorNome(clientes);
-		ArrayList<Cliente> clientesMasculinos = new ArrayList<Cliente>();
-		ArrayList<Cliente> clientesFemininos = new ArrayList<Cliente>();
-		ArrayList<Cliente> clientesOutrosGeneros = new ArrayList<Cliente>();
+		clientesMasculinos.clear();
+		clientesFemininos.clear();
+		clientesOutrosGeneros.clear();
 		
 		for(int i=0; i<clientes.size(); i++)
 		if(clientes.get(i).getGenero().equals("m")) {
@@ -106,24 +173,7 @@ public class Inicio {
 			clientesOutrosGeneros.add(clientes.get(i));
 		}
 		
-		System.out.println("\nMASCULINO ##########################################\n");
-		for(Cliente elemento: clientesMasculinos) {
-			System.out.println("--------------------------------------");
-			System.out.println(elemento.nome);
-			System.out.println(elemento.tel);
-			System.out.println(elemento.nasci.dia + "/" + elemento.nasci.mes + "/" + elemento.nasci.ano);
-			System.out.println(elemento.genero);
-		} 
 		
-		System.out.println("\nFEMININO ##########################################\n");
-		for(Cliente elemento: clientesFemininos) {
-			System.out.println("--------------------------------------");
-			System.out.println(elemento.nome);
-			System.out.println(elemento.tel);
-			System.out.println(elemento.nasci.dia + "/" + elemento.nasci.mes + "/" + elemento.nasci.ano);
-			System.out.println(elemento.genero);
-			
-		}
 		
 		
 	}

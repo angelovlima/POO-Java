@@ -40,6 +40,7 @@ public class Agenda extends Cliente{
 			String generoCliente = sc.nextLine();
 			
 			ArrayList<String> listaServicos = new ArrayList <String>();
+			
 			System.out.println("Insira quantos serviços e produtos foram consumidos");
 			int quantidadeServico = scInt.nextInt();
 			for(int i = 0; i<quantidadeServico; i++ ) {
@@ -75,15 +76,24 @@ public class Agenda extends Cliente{
 			System.out.println("EDITAR CADASTRO");
 			System.out.println("Busque pelo nome: ");
 			Scanner sc = new Scanner(System.in);
+			Scanner scInt = new Scanner(System.in);
 			String nome = sc.nextLine();
-			for (int i = 0; i < listaClientes.size(); i++) {
-				   if (listaClientes.get(i).getNome().equals(nome)) {
+			int numero;
+			for (Cliente elemento: listaClientes) {
+				   if (elemento.nome.equals(nome)) {
 					   System.out.println("Digite o novo nome: ");
-					   listaClientes.get(i).setNome(nome = sc.nextLine());
+					   elemento.setNome(nome = sc.nextLine());
 					   System.out.println("Digite o novo telefone: ");
-					   listaClientes.get(i).setTel(nome = sc.nextLine());
+					   elemento.setTel(nome = sc.nextLine());
 					   System.out.println("Digite o novo gênero: ");
-					   listaClientes.get(i).setGenero(nome = sc.nextLine());
+					   elemento.setGenero(nome = sc.nextLine());
+					   
+					   System.out.println("Digite o dia de nascimento: ");
+					   elemento.setNasciDia(numero = sc.nextInt());
+					   System.out.println("Digite o mes de nascimento: ");
+					   elemento.setNasciMes(numero = sc.nextInt());
+					   System.out.println("Digite o ano de nascimento: ");
+					   elemento.setNasciAno(numero = sc.nextInt());
 				   }
 			}
 					
@@ -190,29 +200,36 @@ public class Agenda extends Cliente{
 		}
 		Collections.sort(todosOsServicos);
 		for(String servico: todosOsServicos) {
-			System.out.println("servico " + servico);
-			System.out.println("servico anterior " + servicoAnterior);
 			if(servico.equals(servicoAnterior)) {
 				cont++;
-				System.out.println("Contador " + cont);
-				System.out.println("Vezes Consumidas " + vezesConsumidas);
+				
 				if(vezesConsumidas<cont) {
 					vezesConsumidas = cont;
 					servicoMaisConsumido = servico;
-					System.out.println(vezesConsumidas);
-					System.out.println(servicoMaisConsumido);
+					
 				}
 			}
 			else {
 				servicoAnterior = servico;
 				cont=1;
-				System.out.println("Contador zerado " + cont);
+				
 			}
 		}
-		System.out.println(todosOsServicos);
+		
 		System.out.println("O servico " + servicoMaisConsumido + " foi utilizado " + vezesConsumidas+ " vezes, sendo assim o mais consumido");
 		
 		
+	}
+	
+	public static void printarClientes(ArrayList<Cliente> clientes) {
+		for(Cliente elemento: clientes) {
+			
+			System.out.println(elemento.nome);
+			System.out.println(elemento.tel);
+			System.out.println(elemento.nasci.dia + "/" + elemento.nasci.mes + "/" + elemento.nasci.ano);
+			System.out.println(elemento.genero);
+			System.out.println("--------------------------------------");
+		}
 	}
 	
 
