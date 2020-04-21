@@ -56,7 +56,7 @@ public class Inicio {
 		for(Usuario elemento: usuarios) {
 			if(elemento.login.user.equals(userLogin) && elemento.login.password.equals(senhaLogin)) {
 				logado = true;
-				sistema(elemento);
+				FluxoCaixa.sistema(elemento);
 			}
 		}
 		if(logado == false) {
@@ -142,34 +142,5 @@ public class Inicio {
             scanner.nextLine();
         }
     }
-	
-	private static void sistema(Object elemento) {
-		Scanner sc = new Scanner(System.in);
-		String opcaoMenu = "";
-		while(opcaoMenu != "0") {
-			
-			System.out.println("\nMENU \n" +
-					"1 - Sei la 1 \n" +
-					"2 - Sei la 2 \n" +
-					"0 - Sair \n");
-			opcaoMenu = sc.nextLine();
-			
-			switch(opcaoMenu) {
-			case "1": 
-				System.out.println("AAAAAAAAAAAAAAAAAAAAAaaa");
-			break;
-			case "2": 
-				System.out.println("AAAAAAAAbbbbbbbbbbbbbbbbAAAAAAAAAAAAAaaa");
-			break;
-			case "0":
-				opcaoMenu = "0";
-				break;
-			default:
-				System.out.println("Opção inválida!");
-				break;
-			}
-			
-		}
-	}
 
 }
