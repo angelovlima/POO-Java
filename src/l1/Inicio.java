@@ -25,8 +25,9 @@ public class Inicio {
 					"5 - Lista por Gênero \n" +
 					"6 - Serviços do Cliente\n" +
 					"7 - Idade Media dos Clientes\n" +
-					"8 - Idade Media dos Clientes por sexo\n" +
-					"9 - Verificar serviço mais procurado\n" +
+					"8 - Idade Media dos Clientes por Gênero \n" +
+					"9 - Verificar Serviço mais Procurado\n" +
+					"10 - Verificar Serviço mais Procurado por Gênero \n" +
 					"0 - Sair \n");
 			opcaoMenu = sc.nextLine();	
 			
