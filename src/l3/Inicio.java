@@ -81,6 +81,7 @@ public class Inicio {
 		Scanner scCad = new Scanner(System.in);
 		String nomeCad, senhaCad, nome, tel, email, rua, bairro, cidade, estado, pais, numero, verificaJuridica;
 		boolean juridica;
+		ArrayList<Data> datas = new ArrayList<Data>();
 		System.out.println("Entre com seu user");
 		nomeCad = scCad.nextLine();
 		System.out.println("Entre com sua senha");
@@ -131,7 +132,7 @@ public class Inicio {
 		}
 		Endereco endereco = new Endereco(pais, estado, cidade, bairro, rua, numero);
 		
-		Usuario usuario = new Usuario(nome, tel, endereco, email, login, juridica);
+		Usuario usuario = new Usuario(nome, tel, endereco, email, login, juridica, datas);
 		usuarios.add(usuario);
 		System.out.println("Cadastro realizado com sucesso!");
 		telaLogin(usuarios);
