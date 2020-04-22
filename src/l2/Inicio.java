@@ -238,10 +238,10 @@ public class Inicio {
 			}
 		}
 		if(editando == false) {
-			for (RevisaoClass revisao: revisoes) {
-				System.out.println(revisao.dataRevisao);
-				System.out.println(revisao.veiculo.placaVeiculo);
-			}
+			//for (RevisaoClass revisao: revisoes) {
+			//	System.out.println(revisao.dataRevisao);
+			//	System.out.println(revisao.veiculo.placaVeiculo);
+			//}
 			Main(clientes, veiculos, revisoes);
 		}
 	}
@@ -270,10 +270,10 @@ public class Inicio {
 			}
 		}
 		if(removendo == false) {
-			for (RevisaoClass revisao: revisoes) {
-				System.out.println(revisao.dataRevisao);
-				System.out.println(revisao.veiculo.placaVeiculo);
-			}
+			//for (RevisaoClass revisao: revisoes) {
+			//	System.out.println(revisao.dataRevisao);
+			//	System.out.println(revisao.veiculo.placaVeiculo);
+			//}
 			Main(clientes, veiculos, revisoes);
 		}
 	}
