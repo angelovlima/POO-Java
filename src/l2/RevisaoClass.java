@@ -1,4 +1,4 @@
-package L2Pack;
+package l2;
 
 public class RevisaoClass extends VeiculoClass {
 	String dataRevisao;
