@@ -41,6 +41,7 @@ public class Inicio {
 				break;
 			}
 		}
+		sc.close();
 	}
 	
 	public static void logar(boolean logado, ArrayList<Usuario> usuarios) {
