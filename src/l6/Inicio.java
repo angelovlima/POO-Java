@@ -8,6 +8,7 @@ public class Inicio {
 
 	public static void main(String[] args) {
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		ArrayList<Profissional> profissionais = new ArrayList<Profissional>();
 
 		Scanner sc = new Scanner(System.in);
 		
@@ -24,7 +25,7 @@ public class Inicio {
 			
 			switch(opcaoMenu) {
 			case "1":
-				System.out.println("éeeeee");
+				Profissional.adicionarNovoProfissional(profissionais);
 				break;
 				
 			case "2":
