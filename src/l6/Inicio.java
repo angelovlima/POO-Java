@@ -24,6 +24,10 @@ public class Inicio {
 			
 			switch(opcaoMenu) {
 			case "1":
+				System.out.println("éeeeee");
+				break;
+				
+			case "2":
 				Cliente.adicionarNovoCliente(clientes);
 				break;
 				
