@@ -4,12 +4,15 @@ public class Animal {
 	private String raca;
 	private String genero;
 	public String idade;
+	public Profissional profissional;
 	
-	public Animal(String raca, String genero, String idade) {
-		super();
+	
+
+	public Animal(String raca, String genero, String idade, Profissional profissional) {
 		this.raca = raca;
 		this.genero = genero;
 		this.idade = idade;
+		this.profissional = profissional;
 	}
 
 	public String getRaca() {

@@ -29,7 +29,7 @@ public class Inicio {
 				break;
 				
 			case "2":
-				Cliente.adicionarNovoCliente(clientes);
+				Cliente.adicionarNovoCliente(clientes,profissionais);
 				break;
 				
 			case "0":

@@ -17,7 +17,7 @@ public class Cliente extends Pessoa{
 	
 	ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 
-	public static void adicionarNovoCliente(ArrayList<Cliente> listaClientes){
+	public static void adicionarNovoCliente(ArrayList<Cliente> listaClientes, ArrayList<Profissional> listaProfissionais){
 		boolean cadastrando = true;
 		int qntddAnimais = 0;
 		Scanner sc = new Scanner(System.in);
@@ -39,6 +39,7 @@ public class Cliente extends Pessoa{
 			
 			ArrayList<Animal> listaAnimais = new ArrayList <Animal>();
 			int quantidadeAnimais = 0;
+			boolean escolhendoProfissional = true;
 			boolean terminado = false;
 			System.out.println("Insira quantos animais possui:");
 			quantidadeAnimais = scInt.nextInt();
@@ -53,8 +54,31 @@ public class Cliente extends Pessoa{
 						String genero = sc.nextLine();
 						System.out.println("Insira a idade: ");
 						String idade = sc.nextLine();
+						String profissionalEscolhido;
+						Profissional prof = null;
 						
-						Animal animal = new Animal(raca,genero,idade);
+						
+						while(escolhendoProfissional) {
+							System.out.println("Escolha qual profissional irá cuidar do seu animal: ");
+							for(Profissional elemento : listaProfissionais) {
+								System.out.println("- " + elemento.getNome());
+							}
+							profissionalEscolhido =  sc.nextLine();
+							
+							for(Profissional elemento : listaProfissionais) {
+								if(profissionalEscolhido.equals(elemento.getNome())) {
+									prof = elemento;
+									escolhendoProfissional = false;
+									break;
+								}
+								
+							}
+							if(escolhendoProfissional) {
+								System.out.println("Este profissional não existe, tente outro.");
+							}
+						}
+						
+						Animal animal = new Animal(raca,genero,idade,prof);
 						listaAnimais.add(animal);
 						
 					}
