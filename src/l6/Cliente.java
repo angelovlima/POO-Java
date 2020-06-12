@@ -17,9 +17,9 @@ public class Cliente extends Pessoa{
 	
 	ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 
-	public static void adicionarNovoCliente(ArrayList<Cliente> listaClientes, ArrayList<Profissional> listaProfissionais){
+	public static void adicionarNovoCliente(ArrayList<Cliente> listaClientes, 
+				ArrayList<Profissional> listaProfissionais, ArrayList<Animal> listaTodosAnimais){
 		boolean cadastrando = true;
-		int qntddAnimais = 0;
 		Scanner sc = new Scanner(System.in);
 		Scanner scInt = new Scanner(System.in);
 
@@ -39,7 +39,6 @@ public class Cliente extends Pessoa{
 			
 			ArrayList<Animal> listaAnimais = new ArrayList <Animal>();
 			int quantidadeAnimais = 0;
-			boolean escolhendoProfissional = true;
 			boolean terminado = false;
 			System.out.println("Insira quantos animais possui:");
 			quantidadeAnimais = scInt.nextInt();
@@ -53,33 +52,11 @@ public class Cliente extends Pessoa{
 						System.out.println("Insira o gênero (F/M): ");
 						String genero = sc.nextLine();
 						System.out.println("Insira a idade: ");
-						String idade = sc.nextLine();
-						String profissionalEscolhido;
-						Profissional prof = null;
-						
-						
-						while(escolhendoProfissional) {
-							System.out.println("Escolha qual profissional irá cuidar do seu animal: ");
-							for(Profissional elemento : listaProfissionais) {
-								System.out.println("- " + elemento.getNome());
-							}
-							profissionalEscolhido =  sc.nextLine();
-							
-							for(Profissional elemento : listaProfissionais) {
-								if(profissionalEscolhido.equals(elemento.getNome())) {
-									prof = elemento;
-									escolhendoProfissional = false;
-									break;
-								}
-								
-							}
-							if(escolhendoProfissional) {
-								System.out.println("Este profissional não existe, tente outro.");
-							}
-						}
-						
-						Animal animal = new Animal(raca,genero,idade,prof);
+						String idade = sc.nextLine();		
+						Animal animal = new Animal(raca,genero,idade);
 						listaAnimais.add(animal);
+						
+						listaTodosAnimais.add(animal);
 						
 					}
 					terminado = true;
@@ -90,6 +67,7 @@ public class Cliente extends Pessoa{
 			}
 			Cliente cliente = new Cliente(nomeCliente,cpfCliente, endCliente, telCliente, listaAnimais);
 			listaClientes.add(cliente);	
+			
 			
 			System.out.println("Continuar cadastrando Cliente (S/N) ?");
 			String continua = sc.nextLine();
