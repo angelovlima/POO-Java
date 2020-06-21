@@ -25,7 +25,7 @@ public class Servidor {
 			// transformando o canal binário para um leitor de texto
 			BufferedReader buffer = new BufferedReader(leitorBinario);
 			String texto = buffer.readLine();
-			System.out.println("Informação enviada pelo cliente: " + texto);
+			System.out.println(texto);
 			buffer.close();
 		}
 	}
