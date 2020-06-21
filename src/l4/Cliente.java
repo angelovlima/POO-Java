@@ -16,7 +16,7 @@ public class Cliente {
 	public void enviar(String texto, String nome) throws Exception {
 		// canal de saida (binário) para escrever para o servidor
 		PrintWriter escritor = new PrintWriter(encaixeCliente.getOutputStream());
-		escritor.write(nome + ":" + texto);
+		escritor.write(nome + ":" + Criptografar.criptografar(texto));
 		escritor.close();
 	}
 
