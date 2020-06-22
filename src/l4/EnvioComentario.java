@@ -2,7 +2,6 @@ package l4;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class EnvioComentario {
@@ -10,7 +9,7 @@ public class EnvioComentario {
 	
 	static void comentar (Cliente cliente) throws Exception {
 		String comentario;
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);	
 		System.out.println("Entre com um comentário");
 		comentario = sc.nextLine();
 		cliente.enviar(comentario, cliente.getNome());

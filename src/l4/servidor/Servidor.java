@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import l4.Criptografia;
 
 public class Servidor {
 	// socket - encaixe, plugue
