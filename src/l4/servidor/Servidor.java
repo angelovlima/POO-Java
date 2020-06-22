@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import l4.Criptografia;
+
 public class Servidor {
 	// socket - encaixe, plugue
 	private ServerSocket encaixeServidor;
@@ -25,6 +27,7 @@ public class Servidor {
 			// transformando o canal binário para um leitor de texto
 			BufferedReader buffer = new BufferedReader(leitorBinario);
 			String texto = buffer.readLine();
+			texto = Descriptografia.descriptografar(texto);
 			System.out.println(texto);
 			buffer.close();
 		}
