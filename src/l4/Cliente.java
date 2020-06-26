@@ -9,7 +9,7 @@ public class Cliente {
 	private String nome;
 	public Cliente(String ip, int porta, String nome) throws Exception {
 		// ip do servidor e a porta onde o servidor está escutando
-		encaixeCliente = new Socket(ip, porta);
+		encaixeCliente = new Socket("25.64.219.116", porta);
 		this.nome = nome;
 	}
 	
